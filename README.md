@@ -68,7 +68,8 @@ API_DEFAULT_FORMAT=json
 $api = app('Dingo\Api\Routing\Router'); //add first line
 
 
-# OAuth2 Setup (source:https://github.com/lucadegasperi/oauth2-server-laravel/blob/master/docs/getting-started/lumen.md)
+# OAuth2 Setup
+(source:https://github.com/lucadegasperi/oauth2-server-laravel/blob/master/docs/getting-started/lumen.md)
 
 Composer is the recommended way to install this package. Add the following line to your composer.json file:
 
