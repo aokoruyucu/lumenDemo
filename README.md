@@ -1,6 +1,6 @@
 ## Lumen PHP Framework + Dingo +OAuth2 with Examples
 
-Installation
+#Installation
 
 1. Composer Installation
 Open Terminal
@@ -19,7 +19,7 @@ lumen new <projectname>
 composer require dingo/api:1.0.x@dev
 
 
-Configuration
+#Configuration
 
 @bootstrap/app.php
 - Uncomment .env file
@@ -45,6 +45,7 @@ $app['Dingo\Api\Exception\Handler']->setErrorFormat([
 ]);
 
 - Create .env file or rename .env-example under the root folder
+
 //Update Database information
 DB_CONNECTION=mysql
 DB_HOST=localhost
@@ -63,11 +64,11 @@ API_VERSION=v1
 API_NAME=api
 API_DEFAULT_FORMAT=json
 
-@app/http/routes.php
+- @app/http/routes.php
 $api = app('Dingo\Api\Routing\Router'); //add first line
 
 
-OAuth2 Setup (source:https://github.com/lucadegasperi/oauth2-server-laravel/blob/master/docs/getting-started/lumen.md)
+# OAuth2 Setup (source:https://github.com/lucadegasperi/oauth2-server-laravel/blob/master/docs/getting-started/lumen.md)
 
 Composer is the recommended way to install this package. Add the following line to your composer.json file:
 
@@ -108,7 +109,9 @@ First copy the migrations from vendor/lucadegasperi/oauth2-server-laravel/databa
 If you get an error saying the Config class can not be found, add class_alias('Illuminate\Support\Facades\Config', 'Config'); to your bootstrap/app.php file and uncomment $app->withFacades(); temporarily to import the migrations.
 
 -OAuth2 Configuration
+
  @config/oauth2.php edit grant-types (password)
+ 
  
  'grant_types' => [
 
@@ -120,10 +123,10 @@ If you get an error saying the Config class can not be found, add class_alias('I
  ],
  
 
--Migration
+#Migration
 php artisan migrate
 
-Thera are some example models controller and tranformers at the project. You can check that how it works or start to create your own project
+Thera are some example models,controllers,tranformers and migrations at the project. You can check that how it works or start to create your own project!
 
 
 
