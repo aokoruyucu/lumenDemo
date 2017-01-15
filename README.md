@@ -119,10 +119,11 @@ If you get an error saying the Config class can not be found, add class_alias('I
          ]
  ],
  
- Add Class Under the 
 
 -Migration
 php artisan migrate
+
+Thera are some example models controller and tranformers at the project. You can check that how it works or start to create your own project
 
 
 
