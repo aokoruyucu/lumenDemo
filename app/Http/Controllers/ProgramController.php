@@ -39,13 +39,7 @@ class ProgramController extends Controller
 
     public function getAllProgramDetail(){
 
-        /*
-         * Eager Loading
-         * -> Transformerlar bunu senin için yapıyor
-         * */
-      /*  $program = Program::with(['speaker' => function ($query) {
-            //$query->where('program_id', '=', $id);
-        }]);*/
+       
         $program =  Program::all();
         $ProgramTransformer = new ProgramTransformer();
         $ProgramTransformer->setFlag("both");
