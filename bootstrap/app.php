@@ -20,12 +20,9 @@ $app = new Laravel\Lumen\Application(
 );
 
 
-$app->configure('app');
-$app->configure('secrets');
 
 class_alias('Illuminate\Support\Facades\Config','Config');
 $app->withFacades();
-
 $app->withEloquent();
 
 
@@ -119,9 +116,7 @@ $app['Dingo\Api\Exception\Handler']->setErrorFormat([
 ]);
 
 
-$app->middleware([
-    \LucaDegasperi\OAuth2Server\Middleware\OAuthExceptionHandlerMiddleware::class
-]);
+
 
 
 
