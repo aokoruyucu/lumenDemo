@@ -2,20 +2,20 @@
 
 #Installation
 
-1. Composer Installation
+- Composer Installation
 Open Terminal
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
-2. Lumen Installation
+- Lumen Installation
 composer global require "laravel/lumen-installer=~1.0"
 
-3. Create New Project
+- Create New Project
 composer create-project laravel/lumen <projectname> "5.1.*"
 or
 lumen new <projectname> 
 (Make sure to place the ~/.composer/vendor/bin directory in your PATH so the lumen executable can be located by your system.)
 	
-4. Dingo Installation
+- Dingo Installation
 composer require dingo/api:1.0.x@dev
 
 
