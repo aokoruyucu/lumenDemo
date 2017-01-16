@@ -27,9 +27,8 @@ $api->version('v1', function ($api) {
     $api->get('program/{id}/speakers', 'App\Http\Controllers\ProgramController@getProgramWithSpeakers');
     $api->get('programs', 'App\Http\Controllers\ProgramController@getAllProgramDetail');
     $api->post('filter', 'App\Http\Controllers\ProgramController@filter');
-    $api->get('eager', 'App\Http\Controllers\ProgramController@eager');
-    $api->get('orm/{id}', 'App\Http\Controllers\ProgramController@orm');
-    $api->get('orm', 'App\Http\Controllers\ProgramController@ormAll');
+    $api->post('eager', 'App\Http\Controllers\ProgramController@eager');
+    $api->post('orm', 'App\Http\Controllers\ProgramController@orm');
     $api->get('withPivot', 'App\Http\Controllers\ProgramController@withPivot');
 
 
