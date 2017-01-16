@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 
 use App\Program;
+
 use App\ProgramFilters;
 use App\Transformers\ProgramTransformer;
+use Dingo\Api\Exception\StoreResourceFailedException;
+use Dingo\Api\Exception\ValidationHttpException;
+use Dingo\Api\Http\Response;
 use Dingo\Api\Routing\Helpers;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
+use Symfony\Component\Translation\Exception\NotFoundResourceException;
+
 
 class ProgramController extends Controller
 {
@@ -71,10 +76,25 @@ class ProgramController extends Controller
         return $this->response->collection($program, $ProgramTransformer);
     }
 
-    public function orm($id){
+    public function orm(Request $request){
+        $rules = [
+            'id' => ['required','numeric']
+        ];
 
-        $program = Program::find($id)->withPivot;
+        $payload = app('request')->only('id', 'title');
 
-        return $program;
+        $validator = app('validator')->make($payload, $rules);
+
+        if ($validator->fails()) {
+            throw new StoreResourceFailedException($validator->errors());
+        }
+
+        $id=$request["id"];
+        $program = Program::find($id);
+        if($program){
+            return $program;
+        }else{
+            throw new NotFoundResourceException();
+        }
     }
 }
